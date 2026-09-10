@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Laura Müller — Portfolio</title>
+    <style>
+      /* Eine Akzentfarbe, sonst viel Weiß und ruhiges Grau. */
+      :root {
+        --akzent: #1e4d6b;
+        --akzent-hover: #163a51;
+        --text: #1c1917;
+        --text-leise: #57534e;
+        --linie: #e7e5e4;
+        --karte: #ffffff;
+        --hintergrund: #fafaf9;
+        --disabled: #a8a29e;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", system-ui, sans-serif;
+        color: var(--text);
+        background: var(--hintergrund);
+        line-height: 1.6;
+      }
+
+      /* Lesbreite begrenzen, viel Abstand zum Rand. */
+      .seite {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 48px 24px 32px;
+      }
+
+      .hero {
+        padding: 56px 0 40px;
+      }
+
+      .hero h1 {
+        margin: 0 0 12px;
+        font-size: clamp(2.2rem, 5vw, 3.2rem);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1.15;
+        color: var(--akzent);
+      }
+
+      .hero .satz {
+        margin: 0;
+        max-width: 34em;
+        font-size: 1.2rem;
+        color: var(--text-leise);
+      }
+
+      section {
+        padding: 36px 0;
+      }
+
+      h2 {
+        margin: 0 0 16px;
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--akzent);
+      }
+
+      .ueber-mich p {
+        margin: 0;
+        max-width: 40em;
+        color: var(--text-leise);
+      }
+
+      /* Handy: eine Spalte. Ab 700px zwei, ab 980px drei Karten. */
+      .karten {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      @media (min-width: 700px) {
+        .karten {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (min-width: 980px) {
+        .karten {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+
+      .karte {
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+        background: var(--karte);
+        border: 1px solid var(--linie);
+        border-radius: 16px;
+        transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      }
+
+      .karte:hover {
+        transform: translateY(-3px);
+        border-color: #c5d4de;
+        box-shadow: 0 10px 28px rgba(30, 77, 107, 0.1);
+      }
+
+      .karte h3 {
+        margin: 0 0 10px;
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--text);
+      }
+
+      .karte p {
+        margin: 0 0 20px;
+        flex: 1;
+        color: var(--text-leise);
+        font-size: 0.98rem;
+      }
+
+      .btn {
+        display: inline-block;
+        align-self: flex-start;
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: var(--akzent);
+        color: #fff;
+        font-weight: 650;
+        font-size: 0.95rem;
+        text-decoration: none;
+      }
+
+      .btn:hover {
+        background: var(--akzent-hover);
+      }
+
+      .bald {
+        color: var(--disabled);
+        font-size: 0.95rem;
+        font-weight: 650;
+      }
+
+      footer {
+        margin-top: 48px;
+        padding: 24px 0 8px;
+        border-top: 1px solid var(--linie);
+        color: var(--text-leise);
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="seite">
+      <header class="hero">
+        <h1>Laura Müller</h1>
+        <p class="satz">
+          Ich baue kleine Werkzeuge mit KI-Unterstützung — zum Anklicken, nicht nur zum Reden.
+        </p>
+      </header>
+
+      <section class="ueber-mich" id="ueber-mich">
+        <h2>Über mich</h2>
+        <p>
+          Ich bin Laura und lerne gerade, mit KI-Unterstützung eigene kleine
+          Werkzeuge zu bauen — Dinge, die man anklicken kann, statt nur darüber
+          zu reden. Diese Seite zeigt, was dabei entstanden ist. Der Digi-Check
+          ist das erste Tool, das online ausprobiert werden kann.
+        </p>
+      </section>
+
+      <section id="projekte">
+        <h2>Meine Projekte</h2>
+        <div class="karten">
+          <article class="karte">
+            <h3>Digi-Check</h3>
+            <p>
+              Ein kurzer Check mit 20 Aussagen: Wie digital ist ein
+              Handwerksbetrieb aufgestellt? Für Inhaber, Büro und Beratung —
+              Ergebnis, Radar-Bild und Empfehlungen gibt es sofort, ohne
+              Anmeldung.
+            </p>
+            <a
+              class="btn"
+              href="https://laura-mueller-digital.github.io/digi-check/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Ausprobieren →</a
+            >
+          </article>
+
+          <article class="karte">
+            <h3>Ideen-Portfolio</h3>
+            <p>
+              Verbesserungsideen sammeln, nach Aufwand und Nutzen bewerten und
+              auf einer Matrix sehen, was ein Quick Win ist. Für Teams, die
+              nicht alles auf einmal machen können, sondern erst das Wichtige.
+            </p>
+            <p class="bald">bald online</p>
+          </article>
+
+          <article class="karte">
+            <h3>Prompt-Bibliothek</h3>
+            <p>
+              Prompts speichern, taggen und wiederfinden, statt sie in
+              irgendwelchen Chats zu suchen. Für alle, die KI im Alltag nutzen
+              und ihre guten Formulierungen behalten wollen.
+            </p>
+            <p class="bald">bald online</p>
+          </article>
+        </div>
+      </section>
+
+      <footer>Gebaut mit Cursor &amp; GitHub Pages · 2026</footer>
+    </div>
+  </body>
+</html>
