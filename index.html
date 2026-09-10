@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Laura Müller — Digitale Werkzeuge</title>
+    <link rel="icon" href="favicon.png" type="image/png" />
     <style>
       /* Eine Akzentfarbe, sonst viel Weiß und ruhiges Grau. */
       :root {
@@ -37,7 +38,19 @@
       }
 
       .hero {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 28px;
         padding: 56px 0 40px;
+      }
+
+      .hero img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        background: #e7eef3;
       }
 
       .hero h1 {
@@ -156,10 +169,13 @@
   <body>
     <div class="seite">
       <header class="hero">
-        <h1>Laura Müller</h1>
-        <p class="satz">
-          Ich baue kleine Werkzeuge mit KI-Unterstützung — zum Ausprobieren, nicht nur zum Reden.
-        </p>
+        <img src="avatar.png" alt="Zeichnung: Laura Müller" width="120" height="120" />
+        <div>
+          <h1>Laura Müller</h1>
+          <p class="satz">
+            Ich baue kleine Werkzeuge mit KI-Unterstützung — zum Ausprobieren, nicht nur zum Reden.
+          </p>
+        </div>
       </header>
 
       <section class="ueber-mich" id="ueber-mich">
